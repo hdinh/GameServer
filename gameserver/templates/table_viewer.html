@@ -1,0 +1,20 @@
+<html>
+<head>
+  <title>Create table</title>
+
+  <script type="text/javascript" src="{{STATIC_URL}}js/jquery-1.4.4.js"></script>
+  <script type="text/javascript" src="{{STATIC_URL}}js/tienlen.lobby.manager.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() { 
+      $("#newTableButton").click(function() {
+        TL.manager.createTable($("#tableName").val());
+      });
+    })
+  </script>
+</head>
+<body>
+<h1>Create new table</h1>
+<input type="text" id="tableName" />
+<input type="submit" value="New table" id="newTableButton" />
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Tienlen</title>
+  <link rel="Stylesheet" href="/stylesheets/reset.css" type="text/css" media="screen" /> 
+  <link rel="Stylesheet" href="/stylesheets/demo_page.css" type="text/css" media="screen" /> 
+  <link rel="Stylesheet" href="/stylesheets/demo_table_jui.css" type="text/css" media="screen" /> 
+  <link rel="Stylesheet" href="/stylesheets/jquery-ui-1.8.4.custom.css" type="text/css" media="screen" /> 
+
+  <script type="text/javascript" src="/js/jquery-1.4.4.js"></script>
+  <script type="text/javascript" src="/js/jquery.md5.js"></script>
+  <script type="text/javascript" src="/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" src="/js/tienlen.lobby.manager.js"></script>
+  <script type="text/javascript" src="/js/tienlen.lobby.js"></script>
+  <script type="text/javascript" src="/js/tienlen.lobbyapp.js"></script>
+</head>
+
+<body>
+  <div id="tienlen-header">
+    <div id="tienlen-wrapper">
+      <h2 id="tienlen-logo">
+        <a href="/">Tienlen</a>
+      </h2>
+    </div>
+  </div>
+
+  <div id="main">
+    <div id="main-left">
+      <table id="tables">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date Created</td>
+          </tr>
+        </thead>
+      </table>
+      <input type="text" id="tableName" />
+      <input type="submit" value="New game" id="newGameButton" />
+      <input type="submit" value="Join table" id="joinTableButton" />
+    </div>
+    <div id="main-right">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <div align="right">
+                Username:
+              </div>
+            </td>
+            <td>
+              <input type="text" id="username" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div align="right">
+                Password:
+              </div>
+            </td>
+            <td>
+              <input type="password" id="password" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="submit" value="Sign in" id="signIn">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="submit" value="Create Account" id="createAccount">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
+
