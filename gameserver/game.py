@@ -1,3 +1,5 @@
+import tornado.web
+
 class GameHandler(tornado.web.RequestHandler):
     def get(self, game_name):
         self.write('cool %s' % game_name)

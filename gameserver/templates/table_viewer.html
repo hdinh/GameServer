@@ -2,8 +2,8 @@
 <head>
   <title>Create table</title>
 
-  <script type="text/javascript" src="{{STATIC_URL}}js/jquery-1.4.4.js"></script>
-  <script type="text/javascript" src="{{STATIC_URL}}js/tienlen.lobby.manager.js"></script>
+  <script type="text/javascript" src="{{ escape(handler.settings['static_path']) }}/js/jquery-1.4.4.js"></script>
+  <script type="text/javascript" src="{{ escape(handler.settings['static_path']) }}/js/tienlen.lobby.manager.js"></script>
   <script type="text/javascript">
     $(document).ready(function() { 
       $("#newTableButton").click(function() {

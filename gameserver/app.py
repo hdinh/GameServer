@@ -1,3 +1,5 @@
+#~/usr/bin/env python
+
 import os.path
 
 import tornado.httpserver
@@ -9,7 +11,7 @@ from tornado.options import define, options
 import game
 import table
 
-define('port', default=8888, help='do stuff', type=int)
+define('port', default=8888, type=int)
 
 registry = None
 
@@ -33,10 +35,6 @@ class RootHandler(tornado.web.RequestHandler):
         self.redirect('/static/index.html')
 
 def main():
-    import pdb; pdb.set_trace()
-    import registry
-    r = registry.AppRegistry()
-
     tornado.options.parse_command_line()
     http_server = tornado.httpserver.HTTPServer(Application())
     http_server.listen(options.port)
