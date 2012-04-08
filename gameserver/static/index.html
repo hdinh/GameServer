@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+
+        <title>Tien Len</title>
+
+        <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+
+        <script type="text/javascript">
+            // Escape from iframes.
+            var in_iframe = window.location != window.top.location;
+            if (in_iframe) window.top.location = window.location;
+        </script>
+
+        <script type="text/javascript" src="./js/jquery-1.7.2.js"></script>
+
+        <script type="text/javascript" src="./js/Remote.js"></script>
+        <script type="text/javascript" src="./js/Game.js"></script>
+        <script type="text/javascript" src="./js/View.js"></script>
+        <script type="text/javascript" src="./js/app.js"></script>
+    </head>
+
+    <body>
+        <div style="position: absolute; top: 0px; left: 0px; display: table; height: 100%; width: 100%; z-index: 0;">
+            <div style="display: table-cell; height: 100%; text-align: center; vertical-align: middle; width: 100%;">
+                <div style="padding: 0px;">
+                    <div style="display: block; height: 50px;">&#160;</div>
+                    <div style="height: 560px; width: 560px; position: relative; margin-left: auto; margin-right: auto;">
+<!-- Prompts -->
+                        <div id="play_prompt" class="prompt" onclick="javascript: game . play ();"></div>
+                        <div id="information_prompt" class="prompt">
+                            <div style="display: table-cell; height: 100%; text-align: center; vertical-align: middle; width: 100%;">
+                                <div style="opacity: 0.9; background-color: #EEEEEE; border: #BBBBBB 1px solid; display: table; margin: 0px; margin-left: auto; margin-right: auto; width: 450px;">
+                                    <div style="display: table-cell; font-size: 12px; padding: 32px; vertical-align: middle;">
+                                        <span style="font-size: 32px;">Tien Len</span><br />
+                                        &#160;<a class="edge" id="email_address" href="#" style="color: #000000; font-size: 12px;"></a>&#160;<br />
+                                        <br />
+                                        <div style="font-size: 14px; font-weight: normal; text-align: center;">
+                                            Play Tien Len instantly with strangers<br />
+                                            Or with friends.
+                                        </div>
+                                        <br />
+                                        <img id="information_button" src="./images/option-continue.png" style="cursor: pointer; margin-top: 3px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="exchange_prompt" class="prompt">
+                            <div style="display: table-cell; height: 100%; text-align: center; vertical-align: middle; width: 100%;">
+                                <div style="opacity: 0.9; background-color: #EEEEEE; border: #BBBBBB 1px solid; display: table; margin-left: auto; margin-right: auto; width: 450px;">
+                                    <div style="display: table-cell; font-size: 14px; padding: 32px; vertical-align: middle;">
+                                        <br />
+                                        <span id="self" style="font-weight: normal;">Connecting</span><br />
+                                        <br />
+                                        <input id="opponent" type="text" name="opponent" value="" style="background-color: #FFFFFF; border: #BBBBBB 1px solid; color: #0000BB; font-size: 14px; margin-bottom: 4px; padding: 4px; text-align: center; width: 200px;"><br />
+                                        <br />
+                                        <img id="exchange_button" src="./images/option-continue.png" style="cursor: pointer; margin-top: 3px;"><img id="stop_button" src="./images/option-stop.png" style="cursor: pointer; display: none; margin-top: 3px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="wait_prompt" class="prompt">
+                            <div style="display: table-cell; height: 100%; text-align: center; vertical-align: middle; width: 100%;">
+                                <div style="opacity: 0.9; background-color: #EEEEEE; border: #BBBBBB 1px solid; display: table; margin-left: auto; margin-right: auto; width: 450px;">
+                                    <div style="display: table-cell; font-size: 12px; padding: 32px; vertical-align: middle;">
+                                        <span style="font-size: 14px;">Waiting for your friend to select a side.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="promotion_prompt" class="prompt">
+                            <div style="display: table-cell; height: 100%; text-align: center; vertical-align: middle; width: 100%;">
+                                <div style="opacity: 0.9; background-color: #EEEEEE; border: #BBBBBB 1px solid; display: table; margin-left: auto; margin-right: auto; width: 450px;">
+                                    <div style="display: table-cell; font-size: 12px; padding: 32px; vertical-align: middle;">
+                                        <span style="cursor: pointer;" onclick="javascript: game . set_promotion ('knight');"><span style="color: #000077; font-size: 14px;">Knight</span></span> &#160;&#160;
+                                        <span style="cursor: pointer;" onclick="javascript: game . set_promotion ('bishop');"><span style="color: #000077; font-size: 14px;">Bishop</span></span> &#160;&#160;
+                                        <span style="cursor: pointer;" onclick="javascript: game . set_promotion ('rook');"><span style="color: #000077; font-size: 14px;">Rook</span></span> &#160;&#160;
+                                        <span style="cursor: pointer;" onclick="javascript: game . set_promotion ('queen');"><span style="color: #000077; font-size: 14px;">Queen</span></span> &#160;&#160;
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="continue_prompt" class="prompt">
+                            <div style="display: table-cell; height: 100%; text-align: center; vertical-align: middle; width: 100%;">
+                                <div style="opacity: 0.9; background-color: #EEEEEE; border: #BBBBBB 1px solid; display: table; margin-left: auto; margin-right: auto; width: 450px;">
+                                    <div style="display: table-cell; font-size: 12px; padding: 32px; vertical-align: middle;">
+                                        <span style="font-size: 14px;">Continue?</span><br />
+                                        <br />
+                                        <span style="cursor: pointer;" onclick="javascript: game . resume ();"><img src="./images/option-continue.png"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+<!-- Board -->
+                        <canvas id="canvas" class="board" style="z-index: 2;" height="560" width="560"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

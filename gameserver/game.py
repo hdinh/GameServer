@@ -9,4 +9,8 @@ class CreateGameHandler(tornado.web.RequestHandler):
         import pdb; pdb.set_trace()
         self.write('you wrote')
 
+class JoinHandler(tornado.web.RequestHandler):
+    games = []
 
+    def post(self):
+        self.write(tornado.escape.json_encode({'number': '234'}))

@@ -9,6 +9,7 @@ import tornado.web
 from tornado.options import define, options
 
 import game
+import player
 import table
 
 define('port', default=8888, type=int)
@@ -19,10 +20,12 @@ class Application(tornado.web.Application):
     def __init__(self):
         handlers = [
             (r'/', RootHandler),
-            (r'/games/([^/]+)/', game.GameHandler),
-            (r'/games', game.CreateGameHandler),
-            (r'/tables/([^/]+)/', table.TableHandler),
-            (r'/tables/', table.CreateTableHandler),
+            (r'/api/games/join', game.JoinHandler),
+            (r'/api/games/([^/]+)/', game.GameHandler),
+            (r'/api/games', game.CreateGameHandler),
+            (r'/api/tables/([^/]+)/', table.TableHandler),
+            (r'/api/tables/', table.CreateTableHandler),
+            (r'/api/player/handshake', player.HandshakeHandler),
         ]
         settings = dict(
             static_path=os.path.join(os.path.dirname(__file__), 'static')
