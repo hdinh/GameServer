@@ -20,9 +20,8 @@ class Application(tornado.web.Application):
     def __init__(self):
         handlers = [
             (r'/', RootHandler),
-            (r'/api/games/join', game.JoinHandler),
             (r'/api/games/([^/]+)/', game.GameHandler),
-            (r'/api/games', game.CreateGameHandler),
+            (r'/api/games', game.GameHandler),
             (r'/api/tables/([^/]+)/', table.TableHandler),
             (r'/api/tables/', table.CreateTableHandler),
             (r'/api/player/handshake', player.HandshakeHandler),
@@ -34,15 +33,14 @@ class Application(tornado.web.Application):
 
 class RootHandler(tornado.web.RequestHandler):
     def get(self):
-        #self.write('Hello, world')
         self.redirect('/static/index.html')
 
 def main():
     tornado.options.parse_command_line()
     http_server = tornado.httpserver.HTTPServer(Application())
     http_server.listen(options.port)
+    print('listening on port %i' % options.port)
     tornado.ioloop.IOLoop.instance().start()
 
 if __name__ == '__main__':
     main()
-

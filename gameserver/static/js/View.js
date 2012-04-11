@@ -61,15 +61,11 @@ function View() {
     /////////////////////////////////////////
 
     function render_seat1() {
-        if (self.game) {
+        if (self.game && self.game.seats) {
             for (var i = 0; i < 13; ++i) {
                 if (true || self.game.seats[0].cards[i]) {
-                    context.drawImage(
+                    self.context.drawImage(
                         card_images[self.game.seats[0].cards[i]],
-                        0,
-                        0,
-                        0,
-                        0,
                         0,
                         0,
                         100,
@@ -103,6 +99,8 @@ function View() {
 
     function render() {
         //window.document.body.style.backgroundImage = "url(./images/background.png)";
+
+        render_table();
 
         $("#play_prompt").hide();
         $("#information_prompt").hide();
@@ -140,6 +138,5 @@ function View() {
     /////////////////////////////////////////
 
     load_images();
-    render_table();
     animate();
 }

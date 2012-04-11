@@ -7,7 +7,7 @@
 
         <title>Tien Len</title>
 
-        <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+        <link rel="stylesheet" type="text/css" href="./stylesheets/style.css" />
 
         <script type="text/javascript">
             // Escape from iframes.
@@ -28,9 +28,8 @@
             <div style="display: table-cell; height: 100%; text-align: center; vertical-align: middle; width: 100%;">
                 <div style="padding: 0px;">
                     <div style="display: block; height: 50px;">&#160;</div>
-                    <div style="height: 560px; width: 560px; position: relative; margin-left: auto; margin-right: auto;">
-<!-- Prompts -->
-                        <div id="play_prompt" class="prompt" onclick="javascript: game . play ();"></div>
+                    <div style="height: 640px; width: 800px; position: relative; margin-left: auto; margin-right: auto;">
+
                         <div id="information_prompt" class="prompt">
                             <div style="display: table-cell; height: 100%; text-align: center; vertical-align: middle; width: 100%;">
                                 <div style="opacity: 0.9; background-color: #EEEEEE; border: #BBBBBB 1px solid; display: table; margin: 0px; margin-left: auto; margin-right: auto; width: 450px;">
@@ -39,8 +38,11 @@
                                         &#160;<a class="edge" id="email_address" href="#" style="color: #000000; font-size: 12px;"></a>&#160;<br />
                                         <br />
                                         <div style="font-size: 14px; font-weight: normal; text-align: center;">
-                                            Play Tien Len instantly with strangers<br />
-                                            Or with friends.
+                                            <input type="text" id="host_table_input" style="background-color: #FFFFFF; border: #BBBBBB 1px solid; color: #888; font-size: 14px; margin-bottom: 4px; padding: 4px; text-align: center; width: 200px;" />
+                                            <br />
+                                            <input type="text" id="join_table_input" style="background-color: #FFFFFF; border: #BBBBBB 1px solid; color: #888; font-size: 14px; margin-bottom: 4px; padding: 4px; text-align: center; width: 200px;">
+
+                                            <br />
                                         </div>
                                         <br />
                                         <img id="information_button" src="./images/option-continue.png" style="cursor: pointer; margin-top: 3px;" />
@@ -48,54 +50,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="exchange_prompt" class="prompt">
-                            <div style="display: table-cell; height: 100%; text-align: center; vertical-align: middle; width: 100%;">
-                                <div style="opacity: 0.9; background-color: #EEEEEE; border: #BBBBBB 1px solid; display: table; margin-left: auto; margin-right: auto; width: 450px;">
-                                    <div style="display: table-cell; font-size: 14px; padding: 32px; vertical-align: middle;">
-                                        <br />
-                                        <span id="self" style="font-weight: normal;">Connecting</span><br />
-                                        <br />
-                                        <input id="opponent" type="text" name="opponent" value="" style="background-color: #FFFFFF; border: #BBBBBB 1px solid; color: #0000BB; font-size: 14px; margin-bottom: 4px; padding: 4px; text-align: center; width: 200px;"><br />
-                                        <br />
-                                        <img id="exchange_button" src="./images/option-continue.png" style="cursor: pointer; margin-top: 3px;"><img id="stop_button" src="./images/option-stop.png" style="cursor: pointer; display: none; margin-top: 3px;">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="wait_prompt" class="prompt">
-                            <div style="display: table-cell; height: 100%; text-align: center; vertical-align: middle; width: 100%;">
-                                <div style="opacity: 0.9; background-color: #EEEEEE; border: #BBBBBB 1px solid; display: table; margin-left: auto; margin-right: auto; width: 450px;">
-                                    <div style="display: table-cell; font-size: 12px; padding: 32px; vertical-align: middle;">
-                                        <span style="font-size: 14px;">Waiting for your friend to select a side.</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="promotion_prompt" class="prompt">
-                            <div style="display: table-cell; height: 100%; text-align: center; vertical-align: middle; width: 100%;">
-                                <div style="opacity: 0.9; background-color: #EEEEEE; border: #BBBBBB 1px solid; display: table; margin-left: auto; margin-right: auto; width: 450px;">
-                                    <div style="display: table-cell; font-size: 12px; padding: 32px; vertical-align: middle;">
-                                        <span style="cursor: pointer;" onclick="javascript: game . set_promotion ('knight');"><span style="color: #000077; font-size: 14px;">Knight</span></span> &#160;&#160;
-                                        <span style="cursor: pointer;" onclick="javascript: game . set_promotion ('bishop');"><span style="color: #000077; font-size: 14px;">Bishop</span></span> &#160;&#160;
-                                        <span style="cursor: pointer;" onclick="javascript: game . set_promotion ('rook');"><span style="color: #000077; font-size: 14px;">Rook</span></span> &#160;&#160;
-                                        <span style="cursor: pointer;" onclick="javascript: game . set_promotion ('queen');"><span style="color: #000077; font-size: 14px;">Queen</span></span> &#160;&#160;
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="continue_prompt" class="prompt">
-                            <div style="display: table-cell; height: 100%; text-align: center; vertical-align: middle; width: 100%;">
-                                <div style="opacity: 0.9; background-color: #EEEEEE; border: #BBBBBB 1px solid; display: table; margin-left: auto; margin-right: auto; width: 450px;">
-                                    <div style="display: table-cell; font-size: 12px; padding: 32px; vertical-align: middle;">
-                                        <span style="font-size: 14px;">Continue?</span><br />
-                                        <br />
-                                        <span style="cursor: pointer;" onclick="javascript: game . resume ();"><img src="./images/option-continue.png"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-<!-- Board -->
-                        <canvas id="canvas" class="board" style="z-index: 2;" height="560" width="560"></canvas>
+
+                        <canvas id="canvas" class="board" style="z-index: 2;" height="640" width="800"></canvas>
                     </div>
                 </div>
             </div>

@@ -6,4 +6,5 @@ class Player():
     def __init__(self, name):
         """Constructor for table."""
         self.name = name
+        self.number = -1
 
